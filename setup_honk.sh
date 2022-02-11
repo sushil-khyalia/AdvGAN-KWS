@@ -1,13 +1,12 @@
 git clone https://github.com/castorini/honk.git
 apt-get install python3-pyaudio
-pip install -r requirements.txt
 apt-get install freeglut3-dev
 cd honk
 ./fetch_data.sh
 mkdir -p ../honk_model/
 cp ../honk_src/* utils/
 cp ../dct_filter.npy ./
-python -m utils.train \
+python3 -m utils.train \
 --audio_preprocess_type MFCCs \
 --data_folder	../data \
 --gpu_no 0 \
